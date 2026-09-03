@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -547,15 +547,22 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="logo">Prop<span>nexaa</span></a>
-      <nav class="nav-links" id="navLinks">
-        <a href="#problems" onclick="toggleMenu()">The Problem</a>
-        <a href="#s1-lead" onclick="toggleMenu()">Lead Automation</a>
-        <a href="#s2-crm" onclick="toggleMenu()">CRM Automation</a>
-        <a href="#s3-dead" onclick="toggleMenu()">Dead Lead Recovery</a>
-        <a href="#s4-intel" onclick="toggleMenu()">Sales Intelligence</a>
-        <a href="#audit" class="btn-demo" onclick="toggleMenu()">Book Revenue Audit</a>
-      </nav>
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Theme" style="background:none;border:none;color:var(--text-primary);cursor:pointer;margin-right:16px;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button><button class="mobile-toggle" onclick="toggleMenu()" aria-label="Menu" id="menuBtn" style="background:none;border:none;color:var(--text-primary);cursor:pointer;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+      <div style="display: flex; align-items: center;">
+        <nav class="nav-links" id="navLinks">
+          <a href="#problems" onclick="toggleMenu()">The Problem</a>
+          <a href="#s1-lead" onclick="toggleMenu()">Lead Automation</a>
+          <a href="#s2-crm" onclick="toggleMenu()">CRM Automation</a>
+          <a href="#s3-dead" onclick="toggleMenu()">Dead Lead Recovery</a>
+          <a href="#s4-intel" onclick="toggleMenu()">Sales Intelligence</a>
+          <a href="#audit" class="btn-demo" onclick="toggleMenu()">Book Revenue Audit</a>
+        </nav>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Theme" style="background:none;border:none;color:var(--text-primary);cursor:pointer;margin: 0 16px;display:flex;align-items:center;justify-content:center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Menu" id="menuBtn" style="background:none;border:none;color:var(--text-primary);cursor:pointer;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -1093,6 +1100,7 @@
 
 </body>
 </html>
+
 
 
 
