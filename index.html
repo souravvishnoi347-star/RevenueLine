@@ -91,25 +91,25 @@
 
   <style>
     :root {
-      --bg-primary: #080a0f;
-      --bg-secondary: #121218;
-      --bg-card: #1a1c22;
-      --bg-card-hover: #24242a;
-      --accent: #00f0ff;
-      --accent-dim: rgba(0, 240, 255, 0.15);
-      --accent-glow: rgba(0, 240, 255, 0.3);
-      --white: #ffffff;
-      --text-primary: #ffffff;
-      --text-secondary: #94979e;
-      --text-muted: #61646b;
-      --border: rgba(255, 255, 255, 0.08);
-      --border-hover: rgba(255, 255, 255, 0.15);
-      --gradient-accent: linear-gradient(135deg, #00f0ff 0%, #0088ff 100%);
-      --green: #10b981;
-      --blue: #3b82f6;
-      --amber: #f59e0b;
-      --red: #ef4444;
-    }
+        --bg-primary: #ffffff;
+        --bg-secondary: #f8fafc;
+        --bg-card: #ffffff;
+        --bg-card-hover: #f1f5f9;
+        --accent: #0f5f6e;
+        --accent-dim: rgba(15, 95, 110, 0.15);
+        --accent-glow: rgba(15, 95, 110, 0.3);
+        --white: #000000;
+        --text-primary: #0f172a;
+        --text-secondary: #475569;
+        --text-muted: #94a3b8;
+        --border: rgba(0, 0, 0, 0.1);
+        --border-hover: rgba(0, 0, 0, 0.2);
+        --gradient-accent: linear-gradient(135deg, #0f5f6e 0%, #7fd3df 100%);
+        --green: #10b981;
+        --blue: #3b82f6;
+        --amber: #f59e0b;
+        --red: #ef4444;
+      }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -161,7 +161,7 @@
     }
     .logo {
       font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 1.35rem;
-      color: var(--white); text-decoration: none; letter-spacing: -0.01em;
+      color: var(--text-primary); text-decoration: none; letter-spacing: -0.01em;
     }
     .logo span { color: var(--accent); }
     .nav-links { display: flex; align-items: center; gap: 28px; }
@@ -171,12 +171,12 @@
       color: var(--text-secondary); text-decoration: none; font-size: 0.95rem;
       font-weight: 500; transition: color 0.25s;
     }
-    .nav-links > a:not(.btn-demo):hover { color: var(--white); }
+    .nav-links > a:not(.btn-demo):hover { color: var(--text-primary); }
 
     /* Button Fixed Contrast */
     a.btn-demo, button.btn-demo {
       display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      background: var(--accent) !important; color: #080a0f !important;
+      background: var(--accent) !important; color: #ffffff !important;
       padding: 10px 24px; border-radius: 10px; text-decoration: none;
       font-size: 0.95rem; font-weight: 700; transition: all 0.3s; border: none; cursor: pointer;
     }
@@ -196,7 +196,7 @@
     
     .mobile-toggle {
       display: none; background: none; border: none;
-      color: var(--white); font-size: 1.8rem; cursor: pointer;
+      color: var(--text-primary); font-size: 1.8rem; cursor: pointer;
       line-height: 1; padding: 4px;
     }
 
@@ -339,7 +339,7 @@
       align-items: center; justify-content: center;
       margin-bottom: 16px; font-size: 1.2rem;
     }
-    .sf-card h4 { font-size: 1.05rem; margin-bottom: 8px; font-weight: 600; color: var(--white); }
+    .sf-card h4 { font-size: 1.05rem; margin-bottom: 8px; font-weight: 600; color: var(--text-primary); }
     .sf-card p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; }
 
     /* Wide Feature Card (for CRM visual) */
@@ -408,7 +408,7 @@
       margin: 0 auto 16px; font-family: 'Figtree', sans-serif; font-size: 1.3rem;
       font-weight: 700; color: var(--accent);
     }
-    .process-step h4 { font-size: 1.05rem; margin-bottom: 8px; color: var(--white); }
+    .process-step h4 { font-size: 1.05rem; margin-bottom: 8px; color: var(--text-primary); }
     .process-step p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
 
     /* ── FAQ ── */
@@ -458,7 +458,7 @@
     }
     .footer-brand {
       font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 1.5rem;
-      color: var(--white); margin-bottom: 16px; display: block; text-decoration: none;
+      color: var(--text-primary); margin-bottom: 16px; display: block; text-decoration: none;
     }
     .footer-brand span { color: var(--accent); }
     .footer-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; max-width: 320px; }
@@ -616,8 +616,9 @@
     <!-- SERVICE 01: LEAD CONVERSION AUTOMATION                     -->
     <!-- ═══════════════════════════════════════════════════════════ -->
     <div id="s1-lead" class="service-block">
-      <div class="container">
-        <div class="service-header reveal">
+        <div class="container">
+          <img src="assets/img2.png" alt="Feature" style="width: 100%; border-radius: 12px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid var(--border);">
+          <div class="service-header reveal">
           <div class="service-number">01</div>
           <div class="service-header-text">
             <span class="service-tag core">Core Service</span>
@@ -701,8 +702,9 @@
     <!-- SERVICE 02: CRM & WORKFLOW AUTOMATION                      -->
     <!-- ═══════════════════════════════════════════════════════════ -->
     <div id="s2-crm" class="service-block">
-      <div class="container">
-        <div class="service-header reveal">
+        <div class="container">
+          <img src="assets/img3.png" alt="Feature" style="width: 100%; border-radius: 12px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid var(--border);">
+          <div class="service-header reveal">
           <div class="service-number">02</div>
           <div class="service-header-text">
             <span class="service-tag core">Core Service</span>
@@ -766,8 +768,9 @@
     <!-- SERVICE 03: DEAD LEAD RECOVERY                             -->
     <!-- ═══════════════════════════════════════════════════════════ -->
     <div id="s3-dead" class="service-block">
-      <div class="container">
-        <div class="service-header reveal">
+        <div class="container">
+          <img src="assets/img4.png" alt="Feature" style="width: 100%; border-radius: 12px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid var(--border);">
+          <div class="service-header reveal">
           <div class="service-number">03</div>
           <div class="service-header-text">
             <span class="service-tag diff">Differentiator</span>
@@ -859,8 +862,9 @@
     <!-- SERVICE 04: AI SALES INTELLIGENCE                          -->
     <!-- ═══════════════════════════════════════════════════════════ -->
     <div id="s4-intel" class="service-block">
-      <div class="container">
-        <div class="service-header reveal">
+        <div class="container">
+          <img src="assets/img5.png" alt="Feature" style="width: 100%; border-radius: 12px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid var(--border);">
+          <div class="service-header reveal">
           <div class="service-number">04</div>
           <div class="service-header-text">
             <span class="service-tag mgmt">Management Layer</span>
