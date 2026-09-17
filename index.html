@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Propnexaa | Real Estate Automation & Lead Conversion for UAE Brokerages</title>
-  <meta name="description" content="Propnexaa helps UAE real estate brokerages automate lead response, qualification, CRM workflows, dead lead recovery, and sales intelligence.">
+  <meta name="description" content="Propnexaa helps UAE real estate brokerages automate lead response, qualification, CRM workflows, dead lead recovery, and sales intelligence. Convert more Property Finder and Bayut leads.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,6 +14,7 @@
     :root {
       --accent: #0f5f6e;
       --accent-dark: #0a434e;
+      --accent-light: #7fd3df;
       --tint: #e6f3f5;
       --text-main: #0e1418;
       --text-muted: #4a545c;
@@ -37,14 +38,14 @@
     a { color: var(--accent); text-decoration: none; transition: all 0.2s ease; }
     a:hover { color: var(--accent-dark); }
     h1, h2, h3, h4, p { margin: 0; }
-    button { font-family: inherit; }
+    button, input, select { font-family: inherit; }
 
-    /* --- SITE HEADER --- */
+    /* ─── SITE HEADER ─── */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
@@ -61,11 +62,11 @@
     .logo {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 9px;
       font-size: 22px;
       font-weight: 700;
       color: var(--text-main);
-      letter-spacing: -0.02em;
+      letter-spacing: -0.03em;
     }
     .logo svg {
       width: 26px;
@@ -92,7 +93,7 @@
     .btn-header {
       background: var(--text-main);
       color: #ffffff !important;
-      padding: 10px 20px;
+      padding: 10px 22px;
       border-radius: 10px;
       font-size: 14px;
       font-weight: 600;
@@ -113,7 +114,7 @@
       padding: 4px;
     }
 
-    /* --- HERO BUTTONS --- */
+    /* ─── BUTTONS ─── */
     .btn-primary {
       background: var(--accent);
       color: #ffffff !important;
@@ -149,7 +150,73 @@
       background: #f8fafc;
     }
 
-    /* --- RESPONSIVE RULES --- */
+    /* ─── FAQ ACCORDION ─── */
+    .faq-item {
+      border-bottom: 1px solid #dfe4e8;
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 22px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      text-align: left;
+      cursor: pointer;
+      color: var(--text-main);
+      font-size: 17px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .faq-question:hover {
+      color: var(--accent);
+    }
+    .faq-icon {
+      flex: none;
+      font-size: 20px;
+      color: var(--accent);
+      width: 24px;
+      text-align: center;
+      font-weight: 400;
+    }
+    .faq-answer {
+      font-size: 15.5px;
+      color: #4a545c;
+      padding: 0 44px 22px 0;
+      max-width: 680px;
+      line-height: 1.6;
+      display: none;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* ─── FORM STYLING ─── */
+    .form-input {
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid #d9dfe3;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 15px;
+      color: var(--text-main);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-input:focus {
+      border-color: var(--accent);
+    }
+    .form-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #4a545c;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    /* ─── RESPONSIVE ─── */
     @media (max-width: 820px) {
       .nav-links {
         display: none;
@@ -164,21 +231,11 @@
         gap: 20px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.06);
       }
-      .nav-links.show {
-        display: flex;
-      }
-      .mobile-toggle {
-        display: block;
-      }
-      .nav-links a {
-        width: 100%;
-        text-align: center;
-      }
-      .btn-header {
-        width: 100%;
-        padding: 12px;
-        text-align: center;
-      }
+      .nav-links.show { display: flex; }
+      .mobile-toggle { display: block; }
+      .nav-links a { width: 100%; text-align: center; }
+      .btn-header { width: 100%; padding: 12px; text-align: center; }
+      .pn-faq-grid { grid-template-columns: 1fr !important; }
     }
 
     @media (max-width: 720px) {
@@ -192,10 +249,10 @@
         padding: 22px 20px !important;
       }
       .pn-hero-stats > div > div:first-child { font-size: 28px !important; }
-      .pn-gap { gap: 32px !important; margin-top: 56px !important; }
       .module-row { grid-template-columns: 1fr !important; gap: 32px !important; margin-top: 56px !important; }
       .module-row .order-img { order: 1 !important; }
       .module-row .order-text { order: 2 !important; }
+      .stats-2x2 { grid-template-columns: 1fr !important; gap: 20px !important; }
     }
 
     @media (max-width: 1100px) {
@@ -211,7 +268,7 @@
 </head>
 <body>
 
-  <!-- --- HEADER --- -->
+  <!-- ─── HEADER ─── -->
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="logo">
@@ -225,16 +282,16 @@
       <nav class="nav-links" id="navLinks">
         <a href="#problem" onclick="toggleMenu()">Problem</a>
         <a href="#modules" onclick="toggleMenu()">Platform</a>
-        <a href="#modules" onclick="toggleMenu()">Results</a>
-        <a href="#problem" onclick="toggleMenu()">FAQ</a>
-        <a href="https://calendly.com" target="_blank" class="btn-header" onclick="toggleMenu()">Book a revenue audit</a>
+        <a href="#results" onclick="toggleMenu()">Results</a>
+        <a href="#faq" onclick="toggleMenu()">FAQ</a>
+        <a href="#cta" class="btn-header" onclick="toggleMenu()">Book a revenue audit</a>
       </nav>
-      <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Menu" id="menuBtn">?</button>
+      <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Menu" id="menuBtn">☰</button>
     </div>
   </header>
 
   <main>
-    <!-- --- SECTION 1: HERO --- -->
+    <!-- ─── SECTION 1: HERO ─── -->
     <section id="top" class="pn-hero" style="max-width:1200px;margin:0 auto;padding:84px 24px 0;text-align:center">
       <div style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--accent);background:var(--tint);padding:6px 16px;border-radius:999px">
         Revenue automation for UAE brokerages
@@ -249,7 +306,7 @@
       </p>
 
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px">
-        <a href="https://calendly.com" target="_blank" class="btn-primary">Book my revenue audit</a>
+        <a href="#cta" class="btn-primary">Book my revenue audit</a>
         <a href="#modules" class="btn-secondary">See the platform</a>
       </div>
 
@@ -264,7 +321,7 @@
             <div style="font-size:13px;opacity:.9;margin-top:6px;font-weight:500">First reply, 24/7</div>
           </div>
           <div>
-            <div style="font-size:36px;font-weight:700;letter-spacing:-.03em;line-height:1">3.2�</div>
+            <div style="font-size:36px;font-weight:700;letter-spacing:-.03em;line-height:1">3.2×</div>
             <div style="font-size:13px;opacity:.9;margin-top:6px;font-weight:500">More viewings per 100 leads</div>
           </div>
           <div>
@@ -279,7 +336,7 @@
       </div>
     </section>
 
-    <!-- --- SECTION 2: WORKS WITH STRIP --- -->
+    <!-- ─── SECTION 2: WORKS WITH STRIP ─── -->
     <section style="border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-light)">
       <div class="pn-strip" style="max-width:1200px;margin:0 auto;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;font-weight:600;font-size:clamp(12px,1.15vw,15px);color:var(--text-light);white-space:nowrap">
         <span style="font-weight:500;font-size:13px;flex:none;color:var(--text-light)">Works with</span>
@@ -313,7 +370,7 @@
       </div>
     </section>
 
-    <!-- --- SECTION 3: THE PROBLEM --- -->
+    <!-- ─── SECTION 3: THE PROBLEM ─── -->
     <section id="problem" class="pn-sec" style="max-width:1200px;margin:0 auto;padding:112px 24px 96px">
       <div style="max-width:720px">
         <div style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">The problem</div>
@@ -346,7 +403,7 @@
       </div>
     </section>
 
-    <!-- --- SECTION 4: THE PLATFORM (FOUR MODULES) --- -->
+    <!-- ─── SECTION 4: THE PLATFORM (FOUR MODULES) ─── -->
     <section id="modules" style="background:var(--bg-light);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
       <div class="pn-sec" style="max-width:1200px;margin:0 auto;padding:112px 24px 120px">
         <div style="text-align:center;max-width:700px;margin:0 auto">
@@ -362,7 +419,7 @@
             <img id="img-m1" src="assets/img2.png" alt="Lead Conversion" style="width:100%;height:100%;object-fit:cover;display:block">
           </div>
           <div class="order-text">
-            <div style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">01 � Lead conversion</div>
+            <div style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">01 · Lead conversion</div>
             <h3 style="font-size:clamp(26px,3vw,36px);line-height:1.15;letter-spacing:-.03em;font-weight:700;margin-top:12px;color:var(--text-main)">
               Every enquiry answered and qualified in under a minute.
             </h3>
@@ -372,15 +429,15 @@
             <ul style="list-style:none;padding:0;margin:24px 0 0;display:grid;gap:14px;font-size:15px;color:var(--text-main)">
               <li style="display:flex;gap:12px;align-items:flex-start">
                 <span style="flex:none;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:9px"></span>
-                <span><strong style="font-weight:600">WhatsApp Business API</strong> � Arabic &amp; English, 24/7</span>
+                <span><strong style="font-weight:600">WhatsApp Business API</strong> · Arabic &amp; English, 24/7</span>
               </li>
               <li style="display:flex;gap:12px;align-items:flex-start">
                 <span style="flex:none;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:9px"></span>
-                <span><strong style="font-weight:600">Conversational qualification</strong> � budget, timeline, payment, community</span>
+                <span><strong style="font-weight:600">Conversational qualification</strong> · budget, timeline, payment, community</span>
               </li>
               <li style="display:flex;gap:12px;align-items:flex-start">
                 <span style="flex:none;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:9px"></span>
-                <span><strong style="font-weight:600">Scoring &amp; routing</strong> � by area expertise, language and capacity</span>
+                <span><strong style="font-weight:600">Scoring &amp; routing</strong> · by area expertise, language and capacity</span>
               </li>
             </ul>
           </div>
@@ -389,7 +446,7 @@
         <!-- Module 02 -->
         <div class="module-row" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px;align-items:center;margin-top:96px">
           <div class="order-text">
-            <div style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">02 � CRM automation</div>
+            <div style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">02 · CRM automation</div>
             <h3 style="font-size:clamp(26px,3vw,36px);line-height:1.15;letter-spacing:-.03em;font-weight:700;margin-top:12px;color:var(--text-main)">
               Keep your CRM. We make it actually get used.
             </h3>
@@ -399,15 +456,15 @@
             <ul style="list-style:none;padding:0;margin:24px 0 0;display:grid;gap:14px;font-size:15px;color:var(--text-main)">
               <li style="display:flex;gap:12px;align-items:flex-start">
                 <span style="flex:none;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:9px"></span>
-                <span><strong style="font-weight:600">Auto-create &amp; enrich</strong> � deduplicated across portals</span>
+                <span><strong style="font-weight:600">Auto-create &amp; enrich</strong> · deduplicated across portals</span>
               </li>
               <li style="display:flex;gap:12px;align-items:flex-start">
                 <span style="flex:none;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:9px"></span>
-                <span><strong style="font-weight:600">Stages move themselves</strong> � from what actually happened</span>
+                <span><strong style="font-weight:600">Stages move themselves</strong> · from what actually happened</span>
               </li>
               <li style="display:flex;gap:12px;align-items:flex-start">
                 <span style="flex:none;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:9px"></span>
-                <span><strong style="font-weight:600">Escalation rules</strong> � untouched high-value leads reach the team lead</span>
+                <span><strong style="font-weight:600">Escalation rules</strong> · untouched high-value leads reach the team lead</span>
               </li>
             </ul>
           </div>
@@ -422,7 +479,7 @@
             <img id="img-m3" src="assets/img5.png" alt="Dead Lead Recovery" style="width:100%;height:100%;object-fit:cover;display:block">
           </div>
           <div class="order-text">
-            <div style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">03 � Dead lead recovery</div>
+            <div style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">03 · Dead lead recovery</div>
             <h3 style="font-size:clamp(26px,3vw,36px);line-height:1.15;letter-spacing:-.03em;font-weight:700;margin-top:12px;color:var(--text-main)">
               Your old database is the cheapest pipeline you'll ever buy.
             </h3>
@@ -432,15 +489,15 @@
             <ul style="list-style:none;padding:0;margin:24px 0 0;display:grid;gap:14px;font-size:15px;color:var(--text-main)">
               <li style="display:flex;gap:12px;align-items:flex-start">
                 <span style="flex:none;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:9px"></span>
-                <span><strong style="font-weight:600">Audit &amp; clean</strong> � dedupe, validate numbers, honour opt-outs</span>
+                <span><strong style="font-weight:600">Audit &amp; clean</strong> · dedupe, validate numbers, honour opt-outs</span>
               </li>
               <li style="display:flex;gap:12px;align-items:flex-start">
                 <span style="flex:none;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:9px"></span>
-                <span><strong style="font-weight:600">Segment by intent</strong> � community, budget, buy vs. rent, off-plan vs. ready</span>
+                <span><strong style="font-weight:600">Segment by intent</strong> · community, budget, buy vs. rent, off-plan vs. ready</span>
               </li>
               <li style="display:flex;gap:12px;align-items:flex-start">
                 <span style="flex:none;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:9px"></span>
-                <span><strong style="font-weight:600">Warm handoff</strong> � replies qualified and routed with full context</span>
+                <span><strong style="font-weight:600">Warm handoff</strong> · replies qualified and routed with full context</span>
               </li>
             </ul>
           </div>
@@ -449,7 +506,7 @@
         <!-- Module 04 -->
         <div class="module-row" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px;align-items:center;margin-top:96px">
           <div class="order-text">
-            <div style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">04 � Sales intelligence</div>
+            <div style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">04 · Sales intelligence</div>
             <h3 style="font-size:clamp(26px,3vw,36px);line-height:1.15;letter-spacing:-.03em;font-weight:700;margin-top:12px;color:var(--text-main)">
               Know where the pipeline is leaking this week, not at month end.
             </h3>
@@ -459,15 +516,15 @@
             <ul style="list-style:none;padding:0;margin:24px 0 0;display:grid;gap:14px;font-size:15px;color:var(--text-main)">
               <li style="display:flex;gap:12px;align-items:flex-start">
                 <span style="flex:none;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:9px"></span>
-                <span><strong style="font-weight:600">Response time by agent</strong> � daily, not anecdotally</span>
+                <span><strong style="font-weight:600">Response time by agent</strong> · daily, not anecdotally</span>
               </li>
               <li style="display:flex;gap:12px;align-items:flex-start">
                 <span style="flex:none;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:9px"></span>
-                <span><strong style="font-weight:600">Cost per viewing by source</strong> � every portal and campaign</span>
+                <span><strong style="font-weight:600">Cost per viewing by source</strong> · every portal and campaign</span>
               </li>
               <li style="display:flex;gap:12px;align-items:flex-start">
                 <span style="flex:none;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:9px"></span>
-                <span><strong style="font-weight:600">Stale-lead alerts</strong> � qualified leads untouched for 48h</span>
+                <span><strong style="font-weight:600">Stale-lead alerts</strong> · qualified leads untouched for 48h</span>
               </li>
             </ul>
           </div>
@@ -479,30 +536,234 @@
       </div>
     </section>
 
-    <!-- --- BOTTOM AUDIT CALLOUT --- -->
-    <section style="background:#0e1418;color:#ffffff;padding:84px 24px;text-align:center">
-      <div style="max-width:720px;margin:0 auto">
-        <div style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#7fd3df;background:rgba(127,211,223,0.12);padding:6px 16px;border-radius:999px">
-          Ready to scale?
+    <!-- ─── SECTION 5: WORKED EXAMPLE (RESULTS) ─── -->
+    <section id="results" style="background:#0e1418;color:#ffffff">
+      <div class="pn-sec" style="max-width:1200px;margin:0 auto;padding:96px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:56px;align-items:center">
+        <div>
+          <div style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-light)">Worked example</div>
+          <h2 style="font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-top:14px">
+            One 18,400-contact database. Ninety days.
+          </h2>
+          <p style="font-size:17px;color:#b8c2cb;margin-top:16px;max-width:480px;line-height:1.6">
+            A mid-size Dubai brokerage reactivated leads collected between 2022 and 2024. The campaign produced more viewings than that month's portal spend, at roughly a tenth of the cost per viewing.
+          </p>
         </div>
-        <h2 style="font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-.03em;font-weight:700;margin-top:20px">
-          Eliminate revenue leakage from your brokerage today.
+        <div class="stats-2x2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:28px 24px">
+          <div style="border-top:1px solid rgba(255,255,255,.18);padding-top:18px">
+            <div style="font-size:40px;font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--accent-light)">14,900</div>
+            <div style="font-size:14px;color:#b8c2cb;margin-top:8px">Valid contacts reached</div>
+          </div>
+          <div style="border-top:1px solid rgba(255,255,255,.18);padding-top:18px">
+            <div style="font-size:40px;font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--accent-light)">27%</div>
+            <div style="font-size:14px;color:#b8c2cb;margin-top:8px">Replied within 90 days</div>
+          </div>
+          <div style="border-top:1px solid rgba(255,255,255,.18);padding-top:18px">
+            <div style="font-size:40px;font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--accent-light)">1,120</div>
+            <div style="font-size:14px;color:#b8c2cb;margin-top:8px">Re-qualified as active</div>
+          </div>
+          <div style="border-top:1px solid rgba(255,255,255,.18);padding-top:18px">
+            <div style="font-size:40px;font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--accent-light)">312</div>
+            <div style="font-size:14px;color:#b8c2cb;margin-top:8px">Viewings booked</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECTION 6: GETTING STARTED ─── -->
+    <section class="pn-sec" style="max-width:1200px;margin:0 auto;padding:112px 24px 96px">
+      <div style="max-width:720px">
+        <div style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">Getting started</div>
+        <h2 style="font-size:clamp(32px,4vw,50px);line-height:1.06;letter-spacing:-.03em;font-weight:700;margin-top:14px;color:var(--text-main)">
+          Live in two weeks. Nothing to replace.
         </h2>
-        <p style="font-size:17px;color:#9ca3af;margin-top:16px;line-height:1.6">
-          Schedule a 30-minute audit of your lead flow and CRM processes. We'll map exactly where your deals are falling through.
-        </p>
-        <div style="margin-top:32px">
-          <a href="https://calendly.com" target="_blank" style="background:#0f5f6e;color:#ffffff;padding:15px 32px;border-radius:12px;font-weight:600;font-size:16px;display:inline-block">
-            Book your revenue audit
-          </a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:56px">
+        <div style="background:#fafbfc;border:1px solid #e9edf0;border-radius:20px;padding:32px">
+          <div style="font-size:14px;font-weight:600;color:var(--accent)">Week 0</div>
+          <h3 style="font-size:20px;font-weight:600;margin-top:12px;color:var(--text-main)">Revenue audit</h3>
+          <p style="font-size:15px;color:#4a545c;margin-top:10px;line-height:1.6">We review lead sources, response times and CRM hygiene, and put a number on what's leaking.</p>
+        </div>
+        <div style="background:#fafbfc;border:1px solid #e9edf0;border-radius:20px;padding:32px">
+          <div style="font-size:14px;font-weight:600;color:var(--accent)">Week 1</div>
+          <h3 style="font-size:20px;font-weight:600;margin-top:12px;color:var(--text-main)">Connect &amp; configure</h3>
+          <p style="font-size:15px;color:#4a545c;margin-top:10px;line-height:1.6">Portals, WhatsApp Business and your CRM are linked. Tone, routing rules and templates agreed with you.</p>
+        </div>
+        <div style="background:#fafbfc;border:1px solid #e9edf0;border-radius:20px;padding:32px">
+          <div style="font-size:14px;font-weight:600;color:var(--accent)">Week 2</div>
+          <h3 style="font-size:20px;font-weight:600;margin-top:12px;color:var(--text-main)">Go live</h3>
+          <p style="font-size:15px;color:#4a545c;margin-top:10px;line-height:1.6">New enquiries flow through Propnexaa. Database recovery starts on the first segment.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECTION 7: FAQ ─── -->
+    <section id="faq" style="background:#fafbfc;border-top:1px solid #e9edf0;border-bottom:1px solid #e9edf0">
+      <div class="pn-sec pn-faq-grid" style="max-width:1200px;margin:0 auto;padding:100px 24px;display:grid;grid-template-columns:1fr 2fr;gap:48px">
+        <div>
+          <div style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">FAQ</div>
+          <h2 style="font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-top:14px;color:var(--text-main)">
+            Before you book
+          </h2>
+        </div>
+        
+        <div style="min-width:0;display:flex;flex-direction:column;border-top:1px solid #dfe4e8">
+          <!-- FAQ 1 (Default Open) -->
+          <div class="faq-item active">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Does Propnexaa replace our existing CRM?</span>
+              <span class="faq-icon">−</span>
+            </button>
+            <div class="faq-answer">
+              No. It connects to the CRM you already use (PropSpace, Zoho, HubSpot, Bitrix24, Salesforce and others) and keeps it updated automatically.
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Is this compliant with UAE data and messaging laws?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes. Outreach runs on the official WhatsApp Business API using approved templates, opt-outs are honoured instantly, and data is processed in line with the UAE Personal Data Protection Law.
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Will automation replace our agents?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              It replaces the parts of the job agents don't want: the 2am first reply, the data entry, the fifth follow-up. Agents get warm, qualified conversations and spend their time on viewings and negotiations.
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>How long does setup take?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Most brokerages are live within two weeks. Portal and WhatsApp connections take a few days; CRM mapping and message tone are agreed with you before anything goes live.
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>What does it cost?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Pricing is based on monthly lead volume and database size, set after the revenue audit so it's tied to the value we can show you. No per-agent licence.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECTION 8: CTA & AUDIT FORM ─── -->
+    <section id="cta" style="position:relative;overflow:hidden;background:#0e1418;color:#ffffff">
+      <img src="assets/img6.png" alt="Dubai Night Skyline" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.32;filter:brightness(0.7)">
+      <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(14,20,24,.95) 0%,rgba(14,20,24,.75) 100%)"></div>
+      
+      <div class="pn-sec" style="position:relative;max-width:1200px;margin:0 auto;padding:100px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px;align-items:center">
+        <div>
+          <div style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-light)">Free 30-minute revenue audit</div>
+          <h2 style="font-size:clamp(32px,4vw,52px);line-height:1.06;letter-spacing:-.03em;font-weight:700;margin-top:14px">
+            Find out how much revenue your workflow is leaking.
+          </h2>
+          <p style="font-size:17px;color:#d7dde2;margin-top:16px;max-width:480px;line-height:1.6">
+            Pick a slot. We review your lead sources, response times and CRM hygiene, then show you, in numbers, what recovering the leakage is worth.
+          </p>
+          <ul style="list-style:none;padding:0;margin:28px 0 0;display:grid;gap:12px;font-size:15px;color:#d7dde2">
+            <li style="display:flex;gap:12px;align-items:center"><span style="color:var(--accent-light);font-size:18px">✓</span>30 minutes on Google Meet or Zoom</li>
+            <li style="display:flex;gap:12px;align-items:center"><span style="color:var(--accent-light);font-size:18px">✓</span>No prep needed; bring your portal and CRM logins if you want live numbers</li>
+            <li style="display:flex;gap:12px;align-items:center"><span style="color:var(--accent-light);font-size:18px">✓</span>Written summary within 24 hours</li>
+          </ul>
+        </div>
+
+        <!-- Schedule Audit Form -->
+        <div style="position:relative">
+          <form id="auditForm" onsubmit="handleAuditSubmit(event)" style="background:#ffffff;color:#0e1418;border-radius:20px;padding:32px;display:grid;gap:16px;box-shadow:0 30px 80px rgba(0,0,0,.45)">
+            <div style="font-size:20px;font-weight:700;letter-spacing:-.02em">Schedule your audit</div>
+            
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px">
+              <div>
+                <label class="form-label">Full name</label>
+                <input name="name" id="auditName" required placeholder="Sara Khan" class="form-input">
+              </div>
+              <div>
+                <label class="form-label">Work email</label>
+                <input name="email" id="auditEmail" type="email" required placeholder="sara@brokerage.ae" class="form-input">
+              </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px">
+              <div>
+                <label class="form-label">Brokerage</label>
+                <input name="company" required placeholder="Company name" class="form-input">
+              </div>
+              <div>
+                <label class="form-label">Agents</label>
+                <select name="size" class="form-input">
+                  <option>1–10</option>
+                  <option>11–30</option>
+                  <option>31–75</option>
+                  <option>75+</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px">
+              <div>
+                <label class="form-label">Preferred date</label>
+                <input name="date" id="auditDate" type="date" required class="form-input">
+              </div>
+              <div>
+                <label class="form-label">Time (GST)</label>
+                <select name="time" id="auditTime" class="form-input">
+                  <option>09:00</option>
+                  <option>10:00</option>
+                  <option>11:00</option>
+                  <option>12:00</option>
+                  <option>14:00</option>
+                  <option>15:00</option>
+                  <option>16:00</option>
+                  <option>17:00</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="form-label">Where do most of your leads come from? <span style="font-weight:400;color:#7a838b">(optional)</span></label>
+              <input name="sources" placeholder="Property Finder, Bayut, Meta ads..." class="form-input">
+            </div>
+
+            <button type="submit" style="background:var(--accent);color:#ffffff;border:0;padding:16px 24px;border-radius:12px;font-weight:600;font-size:16px;cursor:pointer;transition:background 0.2s" onmouseover="this.style.background='var(--accent-dark)'" onmouseout="this.style.background='var(--accent)'">
+              Confirm 30-minute audit
+            </button>
+            <p style="font-size:12.5px;color:#7a838b;text-align:center">You'll receive a calendar invite by email. No commitment.</p>
+          </form>
+
+          <!-- Booking Confirmation State -->
+          <div id="bookingSuccess" style="display:none;background:#ffffff;color:#0e1418;border-radius:20px;padding:48px 32px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.45)">
+            <div style="width:56px;height:56px;border-radius:50%;background:var(--tint);color:var(--accent);display:grid;place-items:center;font-size:26px;font-weight:700;margin:0 auto">✓</div>
+            <div id="successTitle" style="font-size:22px;font-weight:700;letter-spacing:-.02em;margin-top:20px">You're booked!</div>
+            <p id="successMessage" style="font-size:15px;color:#4a545c;margin-top:10px;line-height:1.6">A calendar invite is on its way to your email.</p>
+            <button onclick="resetAuditForm()" style="margin-top:24px;background:none;border:1px solid #d9dfe3;padding:10px 20px;border-radius:10px;font-weight:600;font-size:14px;cursor:pointer;color:#0e1418">Book another slot</button>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- --- FOOTER --- -->
-  <footer style="background:#ffffff;border-top:1px solid var(--border);padding:48px 24px">
-    <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px">
+  <!-- ─── FOOTER ─── -->
+  <footer style="background:#ffffff;border-top:1px solid var(--border)">
+    <div style="max-width:1200px;margin:0 auto;padding:40px 24px;display:flex;justify-content:space-between;align-items:center;gap:20px 32px;flex-wrap:wrap;font-size:14px;color:#7a838b">
       <a href="/" class="logo">
         <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="2" y="2" width="16" height="16" rx="4" fill="#0f5f6e"/>
@@ -511,20 +772,77 @@
         </svg>
         Prop<span>nexaa</span>.
       </a>
-      <p style="font-size:14px;color:var(--text-light)">
-        � 2026 Propnexaa UAE. All rights reserved. Real Estate Automation Infrastructure.
-      </p>
+      <div style="display:flex;gap:28px;flex-wrap:wrap">
+        <a href="#problem" style="color:#4a545c;font-weight:500">Problem</a>
+        <a href="#modules" style="color:#4a545c;font-weight:500">Platform</a>
+        <a href="#results" style="color:#4a545c;font-weight:500">Results</a>
+        <a href="#faq" style="color:#4a545c;font-weight:500">FAQ</a>
+        <a href="#cta" style="color:#4a545c;font-weight:500">Contact</a>
+        <a href="#" style="color:#4a545c;font-weight:500">Privacy</a>
+      </div>
+      <span style="font-size:13.5px">© 2026 Propnexaa · Dubai, UAE</span>
     </div>
   </footer>
 
   <script>
+    // Header Mobile Menu Toggle
     function toggleMenu() {
       const nav = document.getElementById('navLinks');
       const btn = document.getElementById('menuBtn');
       if (nav && btn) {
         nav.classList.toggle('show');
-        btn.innerHTML = nav.classList.contains('show') ? '?' : '?';
+        btn.innerHTML = nav.classList.contains('show') ? '✕' : '☰';
       }
+    }
+
+    // FAQ Accordion
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const icon = btn.querySelector('.faq-icon');
+      const isOpen = item.classList.contains('active');
+      
+      // Close all items
+      document.querySelectorAll('.faq-item').forEach(el => {
+        el.classList.remove('active');
+        const i = el.querySelector('.faq-icon');
+        if (i) i.textContent = '+';
+      });
+
+      // Toggle clicked item
+      if (!isOpen) {
+        item.classList.add('active');
+        if (icon) icon.textContent = '−';
+      }
+    }
+
+    // Set today as min date for audit form
+    const dateInput = document.getElementById('auditDate');
+    if (dateInput) {
+      const today = new Date().toISOString().split('T')[0];
+      dateInput.min = today;
+      dateInput.value = today;
+    }
+
+    // Handle Form Submit
+    function handleAuditSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('auditName').value;
+      const email = document.getElementById('auditEmail').value;
+      const date = document.getElementById('auditDate').value;
+      const time = document.getElementById('auditTime').value;
+
+      document.getElementById('auditForm').style.display = 'none';
+      const successBox = document.getElementById('bookingSuccess');
+      successBox.style.display = 'block';
+      
+      document.getElementById('successTitle').textContent = "You're booked, " + name + "!";
+      document.getElementById('successMessage').textContent = date + " at " + time + " (GST). A calendar invite is on its way to " + email + ".";
+    }
+
+    function resetAuditForm() {
+      document.getElementById('auditForm').reset();
+      document.getElementById('auditForm').style.display = 'grid';
+      document.getElementById('bookingSuccess').style.display = 'none';
     }
   </script>
 </body>
